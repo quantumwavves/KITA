@@ -1,0 +1,14 @@
+<!--Office 2019 full version-->
+<Configuration>
+  <Add OfficeClientEdition="64" Channel="PerpetualVL2019">
+    <Product ID="ProPlus2019Volume">
+      <Language ID="MatchOS" Fallback="en-us" />
+      <ExcludeApp ID="Bing" />
+    </Product>
+    <Product ID="VisioPro2019Volume">
+      <Language ID="MatchOS" Fallback="en-us" />
+    </Product>
+  </Add>
+  <RemoveMSI All="True" />
+  <Display Level="None" AcceptEULA="TRUE" />
+</Configuration>

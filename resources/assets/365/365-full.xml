@@ -1,0 +1,11 @@
+<!--Office 2019 full version-->
+<Configuration>
+  <Add OfficeClientEdition="64">
+    <Product ID="O365ProPlusRetail">
+      <Language ID="MatchOS" Fallback="en-us" />
+      <ExcludeApp ID="Bing" />
+    </Product>
+  </Add>
+  <RemoveMSI All="True" />
+  <Display Level="None" AcceptEULA="TRUE" />
+</Configuration>
