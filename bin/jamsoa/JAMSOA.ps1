@@ -4,7 +4,7 @@ function options {
     Write-Host "#                                     #"
     Write-Host "#     0: Exit                         #"
     Write-Host "#     1: Set your own KMS server      #"
-    Write-Host "#     2: Default (e8.us.to)           #"
+    Write-Host "#     2: Default (kms.digiboy.ir)     #"
     Write-Host "#                                     #"
     Write-Host "#######################################"
     Write-Host "                                       "
@@ -49,7 +49,7 @@ function activator {
         & cscript.exe //nologo //B ospp.vbs /inpkey:FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH
         Write-Output "-> Connect with key management server..."
         if ($choise -eq 1) {& cscript.exe //nologo //B ospp.vbs /sethst:$domain}
-        if ($choise -eq 2) {& cscript.exe //nologo //B ospp.vbs /sethst:e8.us.to}
+        if ($choise -eq 2) {& cscript.exe //nologo //B ospp.vbs /sethst:kms.digiboy.ir}
         Write-Output "-> Activating office copy"
         & cscript.exe //nologo //B ospp.vbs /act
         Write-Output "-> Activation completed"
@@ -70,7 +70,7 @@ function activator {
         & cscript.exe //nologo //B ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP
         Write-Output "-> Conect with key management server..."
         if ($choise -eq 1) {& cscript.exe //nologo //B ospp.vbs /sethst:$domain}
-        if ($choise -eq 2) {& cscript.exe //nologo //B ospp.vbs /sethst:e8.us.to}
+        if ($choise -eq 2) {& cscript.exe //nologo //B ospp.vbs /sethst:kms.digiboy.ir}
         Write-Output "-> Activating office copy"
         & cscript.exe //nologo //B ospp.vbs /act
         Write-Output "-> Activation completed"
