@@ -19,7 +19,10 @@ $choise= Read-Host "`n-> Select option "
     }    
     if($choise -eq "1"){officeOpts}
     if($choise -eq "2"){jamsoa}
-    if($choise -eq "3"){rmsoa}
+    if($choise -eq "3"){
+      Write-Output "-> For problems with RMSOA check my blog: quantumwavves.github.io"
+      rmsoa
+      }
     #if($choise -eq "4"){removeOffice} soon feature 
     if($choise -eq "4"){Write-Output "-> Exit :)"}
 }
@@ -61,8 +64,9 @@ function officeOpts {
  if ($bloatChoise -eq "3") {$bloatVersion = "normal"}
  if ($bloatChoise -eq "4") {$bloatVersion = "all"}
  xmlDownloader
+ Write-Output "-> Installation to begin"
  installer
- if ($version -eq "2019" -and $version -eq "2021") {
+ if ($version -eq "2019" -or $version -eq "2021") {
   postInstall
  }
  else {

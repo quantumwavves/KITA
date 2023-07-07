@@ -55,8 +55,8 @@ function 2019Deploy {
     $currentStep++
     #Deploy Office 2019 LTSC version
     Write-Progress -Activity "Deploying office $officeVersion" -Status "Step $currentStep of $totalSteps" -PercentComplete (($currentStep/$totalSteps)*100)
+    Write-Output "-> Deploy status : started, please wait"
     cmd.exe /c "$env:temp\deploy\setup.exe /configure $env:temp\2019PP.xml"
-    Write-Output "-> Deploy status : started"
     $currentStep++
     #Cleaning temp files
     Write-Progress -Activity "Cleaning temp files $officeVersion" -Status "Step $currentStep of $totalSteps" -PercentComplete (($currentStep/$totalSteps)*100)

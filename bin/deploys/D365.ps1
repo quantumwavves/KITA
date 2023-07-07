@@ -54,10 +54,10 @@ function O365 {
     cmd.exe /c "$env:temp\officeDeploy.exe /quiet /extract:$env:temp\deploy"
     Write-Output "-> Unzip requiered files"
     $currentStep++
-    #Deploy Office 2021 LTSC version
+    #Deploy Office 365 LTSC version
     Write-Progress -Activity "Deploying office $officeVersion" -Status "Step $currentStep of $totalSteps" -PercentComplete (($currentStep/$totalSteps)*100)
-    cmd.exe /c "$env:temp\deploy\setup.exe /configure $env:temp\O365.xml"
-    Write-Output "-> Deploy status : started"
+    Write-Output "-> Deploy status : started, please wait"
+    cmd.exe /c "$env:temp\deploy\setup.exe /configure $env:temp\O365.xml" 
     $currentStep++
     #Cleaning temp files
     Write-Progress -Activity "Cleaning temp files $officeVersion" -Status "Step $currentStep of $totalSteps" -PercentComplete (($currentStep/$totalSteps)*100)
