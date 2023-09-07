@@ -3,8 +3,8 @@ function 2019Deploy {
     $totalSteps=5
     $currentStep=1
     $officeVersion="2019 Pro Plus"
-    $DownloadUrl="https://download.microsoft.com/download/2/7/A/27AF1BE6-DD20-4CB4-B154-EBAB8A7D4A7E/officedeploymenttool_16501-20196.exe"
-    $mirrorUrl="https://media.githubusercontent.com/media/quantumwavves/KITA/master/resources/executables/officedeploymenttool_16501-20196.exe"
+    $DownloadUrl="https://download.microsoft.com/download/2/7/A/27AF1BE6-DD20-4CB4-B154-EBAB8A7D4A7E/officedeploymenttool_16626-20148.exe"
+    $mirrorUrl="https://media.githubusercontent.com/media/quantumwavves/KITA/master/resources/executables/officedeploymenttool_16626-20148.exe"
     #Download developement tool
     Write-Progress -Activity "Download  development deploy tool $officeVersion" -Status "Step $currentStep of $totalSteps" -PercentComplete (($currentStep/$totalSteps)*100)
         $HTTP_Request = [System.Net.WebRequest]::Create($DownloadUrl)
@@ -19,8 +19,8 @@ function 2019Deploy {
             Write-Output "-> Status : $HTTP_Status. Error connecting to the server, starting the download from the mirror..."
             (New-Object System.Net.WebClient).DownloadFile($mirrorUrl, "$env:temp\officeDeploy.exe")
             Write-Output "-> Comparing hashes"
-            $knowHash="2E681996547B66FB5E341C9C1B8B81AE1779DD4439679363BF4F50018B1D5DA6"
-            $srcHash = Get-FileHash $env:temp\officeDeploy.exe -Algorithm "SHA256" 
+            $knowHash="f2df38c4764721a8c0b8a67af43847ae149e4fe075eadf343344afc9a79f6675"
+            $srcHash = Get-FileHash $env:temp\officeDeploy.exe -Algorithm "SHA256"
             if ($knowHash -eq $srcHash.Hash){
                 Write-Output "-> Hash status : OK"
             }else {
