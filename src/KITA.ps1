@@ -131,8 +131,8 @@ function Office_Deploy {
     $totalSteps=5
     $currentStep=1
     $officeName= "Microsoft Office $version"
-    $DownloadUrl="://download.microsoft.com/download/2/7/A/27AF1BE6-DD20-4CB4-B154-EBAB8A7D4A7E/officedeploymenttool_16731-20290.exe"
-    $mirrorUrl="https://download843.mediafire.com/7soo1y8aalpghX9ZtZznTcsApj4oMJSew3iNt9uBC2z76iMHZwskdN3kK08KyRn5Z3k7SD1L1GLzUIbyRDw-5cRu1Mmj8s08Kbxk7T2j4el8NJvaj6ElQjywV05PX5dG0pXOvRmECnCor5IFGp_b4FsE5Q2bTN7g2wbd_4bYfnYfo5k/4l20xzhlo0vlwa6/officedeploymenttool_16731-20290.exe"
+    $DownloadUrl="https://download.microsoft.com/download/2/7/A/27AF1BE6-DD20-4CB4-B154-EBAB8A7D4A7E/officedeploymenttool_16731-20290.exe"
+    $mirrorUrl="https://raw.githubusercontent.com/quantumwavves/KITA/master/resources/executables/officedeploymenttool_16731-20290.exe"
     #Download developement tool
     Write-Progress -Activity "Download  development deploy tool $officeName" -Status "Step $currentStep of $totalSteps" -PercentComplete (($currentStep/$totalSteps)*100)
         $HTTP_Request = [System.Net.WebRequest]::Create($DownloadUrl)
@@ -148,7 +148,7 @@ function Office_Deploy {
             (New-Object System.Net.WebClient).DownloadFile($mirrorUrl, "$env:temp\officeDeploy.exe")
             Write-Output "[=] Comparing hashes"
             $knowHash="613BD0952064CEF8B65335A9C50C435D5E2EDA5D7A6D0EA120806103C72BDE32"
-            $srcHash = Get-FileHash $env:temp\officeDeploy.exe -Algorithm "SHA256" 
+            $srcHash = Get-FileHash $env:temp\officeDeploy.exe -Algorithm "SHA256"
             if ($knowHash -eq $srcHash.Hash){
                 Write-Output "[+] Hash status : OK"
             }else {
