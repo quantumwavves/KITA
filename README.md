@@ -14,13 +14,13 @@ KITA is a script written in powershell. Facilitates office installation and acti
 
 ### Usage
 ```powershell
-iwr -useb "cutt.ly/KITA" | iex
+iwr -useb "cutt.ly/kita" | iex
 ```
 ### Shorter
 ```powershell
-irm "cutt.ly/KITA" | iex
+irm cutt.ly/kita | iex
 ```
 #### Issues TLS/SSL (LTSB Versions)
 ```powershell
-[Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12; iwr -useb "cutt.ly/KITA" | iex
+[Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12; iwr -useb "cutt.ly/kita" | iex
 ```

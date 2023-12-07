@@ -131,8 +131,8 @@ function Office_Deploy {
     $totalSteps=5
     $currentStep=1
     $officeName= "Microsoft Office $version"
-    $DownloadUrl="https://download.microsoft.com/download/2/7/A/27AF1BE6-DD20-4CB4-B154-EBAB8A7D4A7E/officedeploymenttool_16731-20290.exe"
-    $mirrorUrl="https://raw.githubusercontent.com/quantumwavves/KITA/master/resources/executables/officedeploymenttool_16731-20290.exe"
+    $DownloadUrl="https://download.microsoft.com/download/2/7/A/27AF1BE6-DD20-4CB4-B154-EBAB8A7D4A7E/officedeploymenttool_16731-20398.exe"
+    $mirrorUrl="https://raw.githubusercontent.com/quantumwavves/KITA/master/resources/executables/officedeploymenttool_16731-20398.exe"
     #Download developement tool
     Write-Progress -Activity "Download  development deploy tool $officeName" -Status "Step $currentStep of $totalSteps" -PercentComplete (($currentStep/$totalSteps)*100)
         $HTTP_Request = [System.Net.WebRequest]::Create($DownloadUrl)
